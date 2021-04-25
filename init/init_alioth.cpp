@@ -55,43 +55,12 @@ std::vector<std::string> ro_props_default_source_order = {
     "system_ext.",
 };
 
-
-void set_ro_build_prop(const std::string &source, const std::string &prop,
-        const std::string &value, bool product = false) {
-    std::string prop_name;
-
-    if (product) {
-        prop_name = "ro.product." + source + prop;
-    } else {
-        prop_name = "ro." + source + "build." + prop;
-    }
-
-    property_override(prop_name.c_str(), value.c_str(), false);
-}
-
-void set_device_props(const std::string fingerprint, const std::string description,
-        const std::string brand, const std::string device, const std::string model) {
-    for (const auto &source : ro_props_default_source_order) {
-        set_ro_build_prop(source, "fingerprint", fingerprint);
-        set_ro_build_prop(source, "brand", brand, true);
-        set_ro_build_prop(source, "device", device, true);
-        set_ro_build_prop(source, "model", model, true);
-    }
-
-    property_override("ro.build.fingerprint", fingerprint.c_str());
-    property_override("ro.build.description", description.c_str());
-}
-
 void vendor_load_properties() {
-    std::string product = GetProperty("ro.boot.product.hardware.sku", "");
-
-    property_override("ro.product.brand", "Xiaomi");
+    property_override("ro.product.brand", "POCO");
     property_override("ro.product.model", "M2012K11AG");
     property_override("ro.product.device", "alioth");
     property_override("ro.oem_unlock_supported", "0");
-    set_device_props(
-                "Xiaomi/alioth_eea/alioth:11/RKQ1.200826.002/V12.1.2.0.RJDEUXM:user/release-keys",
-                "alioth_eea-user 11 RKQ1.200826.002 V12.1.2.0.RJDEUXM release-keys",
-                "Xiaomi", "alioth", "Xiaomi Poco F3"); // TODO fix the top bits
+    property_override("ro.build.fingerprint","POCO/alioth_eea/alioth:11/RKQ1.200826.002/V12.0.4.0.RKHEUXM:user/release-keys");
+    property_override("ro.build.description","alioth_eea-user 11 RKQ1.200826.002 V12.0.4.0.RKHEUXM release-keys");
     
 }
