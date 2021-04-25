@@ -13,17 +13,15 @@
 -->
 <resources>
 
-    <string-array name="device_refresh_rates"><!-- TODO replace this -->
+    <string-array name="device_refresh_rates"><!-- TODO test this -->
         <item>60 Hz</item>
         <item>90 Hz</item>
         <item>120 Hz</item>
-        <item>144 Hz</item>
     </string-array>
     <string-array name="device_refresh_rates_val">
         <item>3</item>
         <item>4</item>
         <item>5</item>
-        <item>6</item>
     </string-array>
 
 </resources>
