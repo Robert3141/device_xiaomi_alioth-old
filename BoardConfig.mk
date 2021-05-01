@@ -14,7 +14,7 @@ TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_alioth
 TARGET_RECOVERY_DEVICE_MODULES := libinit_alioth
 
 # Kernel
-include device/xiaomi/alioth-kernel/BoardConfigKernel.mk
+include kernel/xiaomi/alioth/Makefile
 TARGET_KERNEL_CONFIG := vendor/alioth_defconfig
 
 # Properties
