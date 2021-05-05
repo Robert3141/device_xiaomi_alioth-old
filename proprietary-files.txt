@@ -446,3 +446,10 @@ vendor/etc/thermal-phone.conf
 vendor/etc/thermal-tgame.conf
 vendor/etc/thermal-video.conf
 vendor/etc/thermald-devices.conf
+
+# missing apks
+#system_ext/priv-app/WfdService/WfdService.apk
+#system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
+#system_ext/app/QtiTelephonyService/QtiTelephonyService.apk
+# product/priv-app/HotwordEnrollmentOKGoogleHEXAGON/HotwordEnrollmentOKGoogleHEXAGON.apk
+# product/priv-app/HotwordEnrollmentXGoogleHEXAGON/HotwordEnrollmentXGoogleHEXAGON.apk
